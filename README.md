@@ -1,35 +1,68 @@
-# Skills
+# Skills for the work behind the work
 
-A collection of reusable agent skills for everyday workflows. Each skill lives in its own folder under `skills/` and contains a `SKILL.md` describing when and how to use it.
+A growing collection of practical AI skills for research, analysis, and the recurring tasks that deserve a better workflow.
 
-## Skills index
+Built for real use. Shared for anyone who finds them useful.
 
-- [Earnings Desk](skills/earnings-desk/) — research public-company earnings, assess financial performance, and create an evidence-led report and infographic.
+[Explore the skills](#skills) · [Install in Codex](#install-in-codex) · [How skills work](#how-skills-work)
 
-## Repository layout
+---
+
+## Skills
+
+### Earnings Desk
+
+**Go beyond the headline earnings beat.**
+
+Turn a quarterly release into an evidence-led breakdown: financial performance, an earnings-call readout, market reaction, and an editorial infographic.
+
+- **Earnings wire:** the numbers and guidance that matter.
+- **Report card:** separate grades for operating performance and financial resilience.
+- **Inside the call:** management's messages, analyst questions, and unanswered questions.
+- **Market verdict:** a sourced look at the reaction, with facts separated from inference.
+- **Infographic:** an executive visual built from verified inputs.
+
+**Try asking:**
+
+> Use $earnings-desk to analyze Microsoft's latest earnings and explain what mattered most. Include the call and market reaction if they are available.
+
+[Explore Earnings Desk →](skills/earnings-desk/)
+
+<details>
+<summary>See an example infographic</summary>
+
+![Fictional earnings infographic for Northstar Cloud Labs, with synthetic figures](earnings-desk-preview.svg)
+
+*Fictional company and synthetic data. This is a format demonstration, not investment research.*
+
+</details>
+
+Earnings Desk needs access to current sources for a current report; consensus estimates, transcripts, and market data depend on the tools and sources available to your agent. It identifies missing information rather than inventing it.
+
+## Install in Codex
+
+Ask Codex:
+
+```text
+$skill-installer install https://github.com/immeramarbeiten/skills/tree/main/skills/earnings-desk
+```
+
+Restart Codex to pick up the installed skill. Then use `$earnings-desk` in a prompt, or ask for a matching task. Review a skill and its scripts before installing or running them.
+
+## How skills work
+
+A skill is a folder of instructions and optional supporting files that an AI agent can use for a particular task. Each one has a `SKILL.md` describing when and how to use it. This repository keeps each skill self-contained under `skills/`.
 
 ```text
 skills/
-└── skill-name/
+└── earnings-desk/
     ├── SKILL.md
-    ├── references/   # Optional: supporting guidance
-    ├── scripts/      # Optional: reusable helpers
-    └── assets/       # Optional: templates or other assets
+    ├── references/
+    ├── scripts/
+    ├── assets/
+    └── tests/
 ```
-
-Only add supporting folders when a skill needs them. Each `SKILL.md` begins with YAML frontmatter containing a `name` and `description`.
-
-## Using a skill in Codex
-
-Ask Codex to install the desired skill from this repository, specifying its GitHub URL and path (for example, `skills/skill-name`). Review the skill and any scripts before installing or running them. Restart Codex if needed for a newly installed skill to appear.
-
-## Adding a skill
-
-1. Add a folder named for the skill under `skills/`, with its `SKILL.md` and any required resources.
-2. Validate and try it with a realistic request.
-3. Add its name, purpose, and link to the skills index above.
-4. Review all files for private information, credentials, and third-party material before publishing.
 
 ## License
 
-No license has been selected yet. Public visibility alone does not grant permission to reuse the contents; a license can be added when the owner chooses one.
+No license has been selected yet. Public visibility alone does not grant permission to reuse the contents.
