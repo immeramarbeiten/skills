@@ -1,0 +1,104 @@
+{
+  "company": "Northstar Cloud",
+  "ticker": "NSCL",
+  "quarter": "Q3 FY2026",
+  "release_date": "2026-10-29",
+  "as_of": "2026-10-29 18:15 ET",
+  "thesis": "Growth reaccelerates as cloud margins improve; larger infrastructure commitments deserve scrutiny.",
+  "branding": {
+    "primary": "#14263D",
+    "accent": "#2A7C9F"
+  },
+  "demo": true,
+  "kpis": [
+    {
+      "label": "Revenue",
+      "actual": 12.4,
+      "estimate": 12.1,
+      "unit": "B",
+      "prefix": "$",
+      "yoy_pct": 21.6
+    },
+    {
+      "label": "Adjusted EPS",
+      "actual": 1.26,
+      "estimate": 1.2,
+      "unit": "",
+      "prefix": "$",
+      "yoy_pct": 16.3
+    },
+    {
+      "label": "Free cash flow",
+      "actual": 2.1,
+      "estimate": 2.4,
+      "unit": "B",
+      "prefix": "$",
+      "yoy_pct": -12.5
+    }
+  ],
+  "trend": {
+    "title": "Quarterly revenue",
+    "unit": "USD billions",
+    "points": [
+      {
+        "period": "Q3'25",
+        "value": 10.2
+      },
+      {
+        "period": "Q4'25",
+        "value": 10.8
+      },
+      {
+        "period": "Q1'26",
+        "value": 11.1
+      },
+      {
+        "period": "Q2'26",
+        "value": 11.8
+      },
+      {
+        "period": "Q3'26",
+        "value": 12.4
+      }
+    ],
+    "linked_kpi_label": "Revenue"
+  },
+  "grades": [
+    {
+      "label": "Income statement",
+      "stars": 4.0,
+      "verdict": "Faster sales; widening operating leverage"
+    },
+    {
+      "label": "Balance sheet",
+      "stars": 3.5,
+      "verdict": "Large cash buffer, but capex pressure"
+    }
+  ],
+  "call_takeaways": [
+    "Management claims demand is rising faster than delivery capacity.",
+    "Analysts focused on the returns from the AI infrastructure build-out."
+  ],
+  "market": {
+    "session": "After-hours",
+    "change_pct": 3.2,
+    "benchmark_pct": 0.4,
+    "as_of": "2026-10-29 18:15 ET",
+    "note": "vs prior regular-session close"
+  },
+  "sources": [
+    {
+      "name": "Fictional IR release",
+      "url": "https://example.com/northstar-ir"
+    },
+    {
+      "name": "Fictional earnings call",
+      "url": "https://example.com/northstar-call"
+    },
+    {
+      "name": "Fictional consensus",
+      "url": "https://example.com/consensus"
+    }
+  ],
+  "disclaimer": "All data, sources and company are fictional; illustration only"
+}
