@@ -31,7 +31,7 @@ Turn a quarterly release into an evidence-led breakdown: financial performance, 
 <details>
 <summary>See an example infographic</summary>
 
-![Fictional earnings infographic for Northstar Cloud Labs, with synthetic figures](earnings-desk-preview.svg)
+![Fictional earnings infographic for Northstar Cloud, with synthetic figures](earnings-desk-preview.svg)
 
 *Fictional company and synthetic data. This is a format demonstration, not investment research.*
 
