@@ -2,7 +2,7 @@
 name: earnings-desk
 description: Research and explain public-company quarterly earnings, earnings calls, guidance, peer-relative financial grades, after-hours/premarket price moves, analyst and retail reactions, and source-verified editorial infographics. Use for earnings recaps, ticker earnings reviews, earnings report cards, or post-call investor analysis. Do not use for price-only lookups or unsourced financial forecasts.
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   category: "public-equity-research"
 ---
 
@@ -56,7 +56,7 @@ State price move, trading session, as-of timestamp and comparator (index or clos
 
 ## Deliverable 5 — Editorial infographic
 
-Create a chart-led editorial visual that makes one defensible argument about the quarter. Choose a chart type and number of panels to fit the evidence, with an informative headline, units, readable direct labels, relevant comparison or context, and source/date notes. Prefer SVG plus PNG when available; adapt aspect ratio for the destination and mobile reading. Do not force KPI cards, grades, market moves, or a fixed panel count into the graphic. If data are thin, use a simpler sourced chart or explicitly say why a chart is unavailable. See `references/visual-system.md` and `references/story-chart-schema.md`.
+Create a chart-led editorial visual that makes one defensible argument about the quarter. Choose a chart type and number of panels to fit the evidence, with an informative headline, units, readable direct labels, relevant comparison or context, and source/date notes. Prefer SVG plus PNG when available; adapt aspect ratio for the destination and mobile reading. Size plots to their information: a sparse comparison can sit beside a useful text or metric column on a wide canvas, with a stacked layout on mobile. Do not force KPI cards, grades, market moves, or a fixed panel count into the graphic. If data are thin, use a simpler sourced chart or explicitly say why a chart is unavailable. See `references/visual-system.md` and `references/story-chart-schema.md`.
 
 ## Stop rules, confidence and freshness
 
