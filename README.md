@@ -14,13 +14,14 @@ Built for real use. Shared for anyone who finds them useful.
 
 **Go beyond the headline earnings beat.**
 
-Turn a quarterly release into an evidence-led breakdown: financial performance, an earnings-call readout, market reaction, and an editorial infographic.
+Turn a quarterly release into an evidence-led breakdown: a quick earnings wire, financial grades, an earnings-call readout, market reaction, and a chart-led visual.
 
-- **Earnings wire:** the numbers and guidance that matter.
+- **Earnings wire:** a quick scan of the numbers and guidance that matter.
 - **Report card:** separate grades for operating performance and financial resilience.
 - **Inside the call:** management's messages, analyst questions, and unanswered questions.
 - **Market verdict:** a sourced look at the reaction, with facts separated from inference.
-- **Infographic:** an executive visual built from verified inputs.
+- **Chart story:** editorial charts selected to explain the quarter's central tension.
+- **Saved reports:** Google Drive or a verified private Git repository when configured, with a local fallback.
 
 **Try asking:**
 
@@ -29,9 +30,9 @@ Turn a quarterly release into an evidence-led breakdown: financial performance, 
 [Explore Earnings Desk →](skills/earnings-desk/)
 
 <details>
-<summary>See an example infographic</summary>
+<summary>See an example chart story</summary>
 
-![Fictional earnings infographic for Northstar Cloud, with synthetic figures](earnings-desk-preview.svg)
+![Fictional earnings chart story showing cloud growth and investment with synthetic figures](earnings-desk-preview.svg)
 
 *Fictional company and synthetic data. This is a format demonstration, not investment research.*
 

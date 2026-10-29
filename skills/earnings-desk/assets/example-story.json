@@ -1,0 +1,32 @@
+{
+  "headline": "A fictional platform grows while investment rises",
+  "deck": "Example data only: a two-panel chart story illustrates operating growth and investment.",
+  "as_of": "2026-10-29 12:00 UTC",
+  "alt_text": "Fictional example. Cloud growth increases from 40 to 60 percent while Search growth falls from 15 to 10 percent. Quarterly capex rises from 8 to 18 billion while operating cash flow moves from 20 to 17 billion.",
+  "demo": true,
+  "sources": [{"name": "Illustrative example", "url": "https://example.com/"}],
+  "panels": [
+    {
+      "type": "slope",
+      "title": "Cloud accelerates as Search growth slows",
+      "unit": "Year-on-year revenue growth, %",
+      "sources": [1],
+      "periods": ["Q2", "Q3"],
+      "series": [
+        {"name": "Cloud", "values": [40, 60]},
+        {"name": "Search", "values": [15, 10]}
+      ]
+    },
+    {
+      "type": "line",
+      "title": "Capital expenditure catches up with cash generation",
+      "unit": "$ billion per quarter",
+      "sources": [1],
+      "periods": ["Q4", "Q1", "Q2", "Q3"],
+      "series": [
+        {"name": "Operating cash flow", "values": [20, 19, 18, 17]},
+        {"name": "Capex", "values": [8, 11, 14, 18]}
+      ]
+    }
+  ]
+}

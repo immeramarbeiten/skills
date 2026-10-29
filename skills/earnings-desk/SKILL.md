@@ -2,7 +2,7 @@
 name: earnings-desk
 description: Research and explain public-company quarterly earnings, earnings calls, guidance, peer-relative financial grades, after-hours/premarket price moves, analyst and retail reactions, and source-verified editorial infographics. Use for earnings recaps, ticker earnings reviews, earnings report cards, or post-call investor analysis. Do not use for price-only lookups or unsourced financial forecasts.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   category: "public-equity-research"
 ---
 
@@ -16,7 +16,7 @@ When the user gives a ticker/quarter, research the full report. If they say "lat
 
 Optional modes: `flash` (section 1), `scorecard` (1+2), `call` (3), `tape` (4), `visual` (5), `full` (all five, default). For multi-company requests, generate a comparable scorecard and separate supporting detail, with source-specific metrics.
 
-Do not ask about aesthetic preferences: use the company's recognizable IR-site visual language when reliably sourced, otherwise a neutral financial-publication palette. Never copy a news publisher's exact brand or claim affiliation.
+Use the Earnings Desk visual language in `references/visual-system.md`: charts should explain the quarter's central tension, using the company's brand only when the user asks. Take inspiration from clear financial journalism without copying any publisher's distinctive trade dress, masthead, or exact design. Do not ask for aesthetic preferences unless they affect the requested result.
 
 ## Non-negotiable research workflow
 
@@ -28,15 +28,16 @@ Do not ask about aesthetic preferences: use the company's recognizable IR-site v
 6. **Read the entire call if available:** Separate scripted management remarks from analyst Q&A. Note management confidence, evasiveness, revisions, repeated questions, quantitative changes and new strategic disclosures. Give 1–3 replay moments with actual timestamps only if verified. Do not attribute a thesis to a person without a source.
 7. **Measure market response carefully:** Verify stock move and timestamp for `after-hours`, `premarket`, and/or `next regular session`, plus benchmark/sector when possible. Give price basis and currency; do not treat a thinly traded single tick as a settled verdict. Compare against pre-announcement positioning and the guide. Track journalist, sell-side and retail views separately; label sentiment samples anecdotal, not representative.
 8. **Write all five sections** per `references/report-format.md`. Inline-cite consequential facts and every short direct quote. Distinguish fact, inference, and opinion. Write concise headline bullets first; deepen through the rest. Mention missing or stale components prominently. No definitive investment recommendation unless requested.
-9. **Create infographic:** Follow `references/visual-system.md`. Prefer deterministic text and charts built from validated data. Optionally produce SVG/PNG with `scripts/render_infographic.py` using a vetted JSON object matching `references/report-schema.md`. Do not use an image-generation model for numerical plots or tiny text; generative imagery is optional decoration only. Never invent a logo. Link or identify primary sources within the figure.
-10. **Final QA:** Confirm dates, percentages, estimates, all derived calculations, peer comparability, the market move window, the grading rationale and visual/text agreement. Where facts lack verification, omit them or clearly label unverified; never fill a visually empty field with invented data.
+9. **Create a chart-led story:** Follow `references/visual-system.md`. Select one to three relevant charts around an evidence-backed thesis; use `scripts/render_story_chart.py` and `references/story-chart-schema.md` where the chart types fit, or other deterministic chart tools when they do not. Prefer vector text and real data. Do not use an image-generation model for numerical plots or tiny text. Cite sources in the visual and provide alt text; never invent a logo or figures. The earlier `render_infographic.py` remains an optional legacy card template, not the default.
+10. **Save and return the work:** Use `references/saving-reports.md`. For the configured Drive workflow, create a mobile-readable native Google Doc and save the chart and source links alongside it. A verified private Git repository is an alternative when requested. Link the saved report in the response; do not mistake chat text or a chart alone for a saved full report. If the destination is unavailable, preserve a local report and say what was not saved.
+11. **Final QA:** Confirm dates, percentages, estimates, all derived calculations, peer comparability, the market move window, the grading rationale, chart scales, source labels, and visual/text agreement. Where facts lack verification, omit them or clearly label unverified; never fill a visually empty field with invented data. Inspect a rendered preview when available; report if visual inspection could not be completed.
 
 ## Deliverable 1 — Earnings wire (X/Twitter style)
 
 - Title `COMPANY $TICKER Q# FY## EARNINGS HIGHLIGHTS` plus release date.
-- 5–9 high-signal bullets upfront: reported and adjusted EPS if relevant; total revenue; critical segments; operating profit/margin; cash flow, bookings/RPO/GMV/ARPU as applicable; guidance. Add `actual (Est. ...) beat/miss` and YoY only when sourced and comparable. Color semantics: 🟢 **above consensus**, 🔴 **below consensus**, ⚪ **in line / unavailable**; these indicate *surprise direction*, not economic goodness. For metrics where lower is usually better (costs), write the comparison in words and avoid a categorical positive emoji.
-- Then compact domain-specific subheads with the most diagnostic breakdowns, notably one-offs and capital allocation. Do not dump all line items indiscriminately. Max 1–2 short CEO quotes with source; preserve whether they were in the prepared remarks or Q&A.
-- "Fast read" in one sentence: how the print differed from what mattered going in.
+- Put a one-sentence fast read immediately beneath the title, then short, one-metric lines. Start with 4–6 headline metrics, followed only as useful by compact subheads such as `Segments`, `Guidance`, `Key metrics`, and `Capital return`. Select the most decision-relevant lines for the company; avoid repeating the full analysis from later sections.
+- Use `Metric: actual (Est. comparable estimate) 🟢/🔴; ±X% YoY` when a credible, comparable pre-release estimate and basis are verified. 🟢/🔴 describe surprise direction, not quality; ⚪ means in line or unavailable. If estimate basis or cutoff is unknown, say `Est.: unavailable` and omit a beat/miss judgment. For costs, state the comparison in words. Label GAAP/non-GAAP, guidance period and material one-offs without packing paragraphs into bullets.
+- Put citations at each compact group or in a short source line immediately below it, with accessible links. Include a very short attributed management quote only if it adds information; preserve whether it comes from prepared remarks or Q&A.
 - `flash` mode should be social-friendly, but not forcibly squeezed into 280 characters unless requested. No fake Reuters/Bloomberg attribution.
 
 ## Deliverable 2 — Professor's report card (0–5 stars)
@@ -55,7 +56,7 @@ State price move, trading session, as-of timestamp and comparator (index or clos
 
 ## Deliverable 5 — Editorial infographic
 
-Make a single clean 1600×1000 SVG/PNG executive visual with company-aware accent colors, three KPIs, one relevant time series, two financial grades, two short call takeaways, and a sourced market tape headline if available. Dense but readable on mobile, multiple type sizes and strong hierarchy; editorial like a rigorous business newspaper, **not copying any outlet's design or masthead**. If not enough reliable data, prefer a data-light visual to invented entries. The script is an optional deterministic renderer; when there is no code execution/image support, describe the visual blueprint instead of claiming it was produced.
+Create a chart-led editorial visual that makes one defensible argument about the quarter. Choose a chart type and number of panels to fit the evidence, with an informative headline, units, readable direct labels, relevant comparison or context, and source/date notes. Prefer SVG plus PNG when available; adapt aspect ratio for the destination and mobile reading. Do not force KPI cards, grades, market moves, or a fixed panel count into the graphic. If data are thin, use a simpler sourced chart or explicitly say why a chart is unavailable. See `references/visual-system.md` and `references/story-chart-schema.md`.
 
 ## Stop rules, confidence and freshness
 
@@ -72,8 +73,11 @@ Make a single clean 1600×1000 SVG/PNG executive visual with company-aware accen
 - `references/grading-rubric.md` — stage- and sector-adjusted 5-star rubric
 - `references/sector-playbooks.md` — SaaS, ads/cloud, banks/insurance, consumer, hardware, biotech
 - `references/report-format.md` — complete five-section layout and minimum citations
-- `references/report-schema.md` — JSON input for deterministic visual
-- `references/visual-system.md` — art direction and accessibility
+- `references/saving-reports.md` — persistent Drive, private Git and local fallback workflows
+- `references/visual-system.md` — original editorial design language and chart selection
+- `references/story-chart-schema.md` — reusable chart-story inputs and commands
+- `references/report-schema.md` — JSON input for the legacy card visual
 - `scripts/validate_report.py` — input and calculation QA
 - `scripts/render_infographic.py` — SVG renderer; optional PNG export
+- `scripts/render_story_chart.py` — editable chart-led SVGs from vetted inputs
 - `assets/example-report.json` — entirely fictional demo data; NEVER cite as real
